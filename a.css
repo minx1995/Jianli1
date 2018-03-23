@@ -4,6 +4,9 @@
   display: block;
   clear: both;
 }
+ul,ol{
+  list-style:none;
+}
 .topNavBar{
   padding-top: 20px;
   padding-bottom: 12px;
@@ -80,30 +83,30 @@ color: #E6686A;
   background: rgba(0, 0, 0,0.8);
 }
 .usercard{
- 
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
   background-color: #FFFFFF;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5)
 }
-.usercard .welcome{
-  background: #E6686A;
+.welcome{
+  background: #e6686a;
   color: white;
   display: inline-block;
   padding: 4px 16px;
   line-height: 22px;
   position: relative;
+  margin-bottom: 10px;
 }
-.usercard .welcome .try{
-  display: inline-block;
+.try{
+  display: block;
   border: 10px solid transparent;
   width: 0px;
-  border-left-color: #E6686A;
-  border-top-width: 0px ;
+  border-left-color: #e6686a;
+  border-top-width: 0px;
   position: absolute;
   left: 4px;
   top: 100%;
-  margin-bottom: 10px;
 }
 .usercard .picture{
   float: left;
@@ -158,4 +161,173 @@ color: #E6686A;
   fill: white;
 margin: 0 5px;
 vertical-align: top;
+}
+body>main{
+  margin-top: -340px;
+}
+body>main .download{
+  font-size: 14px;
+  line-height: 16px;
+  padding: 21px 55px;
+display: inline-block;
+border: 1px solid #CDDFD1;
+border-radius: 2px;
+color: #3d4451;
+font-weight: bold;
+margin: 32px 0;
+transition: box-shadow 0.2s;
+}
+body>main .dw{
+
+}
+body>main .download:hover{
+box-shadow: 0px 4px 13px 0px rgba(0, 0, 0,0.2);
+}
+.self{
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: cursive;
+  line-height: 1.8;
+  font-size: 18px;
+}
+section.skill,
+section.works{
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 77px;
+}
+section.skill h2{
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-align: center;
+}
+section.skill >ol{
+  background-color: #fff;
+  box-shadow: 0px 4px 13px 0px rgba(0, 0, 0,0.5);
+  padding: 42px 50px 10px;
+  margin-top: 30px;
+}
+section.skill >ol>li{
+  float: left;
+  width: 48%;
+  box-sizing: border-box;
+}
+section.skill >ol>li:nth-child(even){
+  float: right;
+}
+section.skill .jindutiao{
+    height: 5px;
+ background: #FAE1E1;
+ border-radius: 2px;
+  margin: 4px 0 40px;
+}
+section.skill .jindutiao .jindu1{
+  background-color:  #E6686A;
+  width:40%;
+  height: 100%;
+}
+section.skill .jindutiao .jindu2{
+  background-color:  #E6686A;
+  width:35%;
+  height: 100%;
+}
+section.skill .jindutiao .jindu3{
+  background-color:  #E6686A;
+  width:50%;
+  height: 100%;
+}
+section.skill .jindutiao .jindu4{
+  background-color:  #E6686A;
+  width:65%;
+  height: 100%;
+}
+section.skill .jindutiao .jindu5{
+  background-color:  #E6686A;
+  width:60%;
+  height: 100%;
+}
+section.skill .jindutiao .jindu6{
+  background-color:  #E6686A;
+  width:80%;
+  height: 100%;
+}
+section.skill h3{
+
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+
+
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+}
+section.works h2{
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-align: center;
+}
+section.works >nav>ol>li{
+  float: left;
+  margin-left: 40px;
+  cursor: pointer;
+}
+section.works >nav>ol{
+
+  margin: auto;
+  display: inline-block;
+  vertical-align: top;
+}
+section.works >nav>ol>li:nth-child(1)
+{
+  margin-left: 0px;
+}
+section.works >nav{
+  text-align: center;
+  display: inline-block;
+  margin-top: 32px; 
+
+}
+section.works >nav .Bar{
+
+background: white;
+margin-top: 5px;
+margin-bottom: 100px;
+height: 5px;
+border-radius: 2px;
+}
+section.works{
+  text-align: center;
+}
+section.works >nav .Bar .Bar-inner{
+  height: 100%;
+  background: #E6686A;
+  width: 10px;
+}
+section.works >nav .Bar.state-1 .Bar-inner{
+  margin-left: 0;
+  width: 45px;
+}
+section.works >nav .Bar.state-2 .Bar-inner{
+  margin-left: 65px;
+  width: 50px;
+}
+section.works >nav .Bar.state-3 .Bar-inner{
+  margin-left: 140px;
+  width: 95px;
+}
+section.works .jobs{
+  position: relative;
+  height: 597px;
+}
+section.works .jobs >.big,
+section.works .jobs >.small{
+  position: absolute;
 }

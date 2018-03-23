@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="./a.css">
   <head>
-    <title>何铭的个人简历</title>
+    <title>Ming的个人简历</title>
     <link rel="stylesheet" href="./a.css">
     <style type="text/css">
-      /* .icon {
+  .icon {
          width: 1em; height: 1em;
          vertical-align: -0.15em;
          fill: currentColor;
          overflow: hidden;
-      } */
+      }
   </style>
   </head>
   <body>
@@ -45,10 +44,10 @@
           <div class="text">
            
               <span class="welcome">Hello
-                <span class="try">
+                <span class="try" >
                 </span>
               </span>
-              <h1>何铭</h1>
+              <h1>Ming</h1>
               <p>前端开发工程师</p>
               <hr>
               <dl class="clearfix">
@@ -57,9 +56,9 @@
                 <dt>所在城市</dt>
                 <dd>成都</dd>
                 <dt>邮箱</dt>
-                <dd>572747204@qq.com</dd>
+                <dd>1231254223@qq.com</dd>
                 <dt>手机</dt>
-                <dd>15520260535</dd>
+                <dd>1231231252</dd>
               </dl>
           
           </div>
@@ -92,39 +91,97 @@
           </a>
         </footer>
       </div>
-
-      <a class="button" href="#">下载 PDF 简历</a>
-
-      <p>
-        何铭：x@……%……&%￥*&%#！
+<p class="dw" style="text-align:center">
+  <a  class="download" href="#" download="">下载 PDF 简历</a>
+</p>
+      <p class="self">
+        Ming：x@……%……&%￥*&%#！
       </p>
 
     </main>
-    <section>
+    <section class="skill">
       <h2>技能</h2>
-      <ol>
-        <li>HTML 5 &amp; CSS 3</li>
-        <li>JavaScript</li>
-        <li>jQuery</li>
-        <li>Vue</li>
-        <li>React</li>
-        <li>HTTP</li>
+      <ol class="clearfix">
+        <li>
+          <h3>
+              HTML 5 &amp; CSS 3
+          </h3>
+          <div class="jindutiao">
+            <div class="jindu1"></div>
+          </div>
+         </li>
+         <li>
+            <h3>
+                Javascript
+            </h3>
+            <div class="jindutiao">
+              <div class="jindu2"></div>
+            </div>
+           </li> <li>
+              <h3>
+                  jQuery
+              </h3>
+              <div class="jindutiao">
+                <div class="jindu3"></div>
+              </div>
+             </li> <li>
+                <h3>
+                    vue.js
+                </h3>
+                <div class="jindutiao">
+                  <div class="jindu4"></div>
+                </div>
+               </li> <li>
+                  <h3>
+                      react.js
+                  </h3>
+                  <div class="jindutiao">
+                    <div class="jindu5"></div>
+                  </div>
+                 </li> <li>
+                    <h3>
+                        Node.js
+                    </h3>
+                    <div class="jindutiao">
+                      <div class="jindu6"></div>
+                    </div>
+                   </li>
       </ol>
     </section>
-    <section>
+    <section class="works">
       <h2>作品集</h2>
       <nav>
-        <ol>
-          <li>所有</li>
-          <li>框架</li>
-          <li>原生JS&amp;CSS</li>
+        <ol class="clearfix">
+          <li id="works1">所有</li>
+          <li id="works2">框架</li>
+          <li id="works3">原生JS&amp;CSS</li>
         </ol>
+        <div id="worksBar" class="Bar state-1" >
+          <div class="Bar-inner"></div>
+        </div>
       </nav>
-
+<script>
+    works1.onclick=function(){
+      worksBar.className = 'Bar state-1'
+    }
+    works2.onclick=function(){
+      worksBar.className = 'Bar state-2'
+    } 
+       works3.onclick=function(){
+        worksBar.className = 'Bar state-3'
+    }
+</script>
       <div class="jobs">
-        <div class="big"></div>
-        <div class="small"></div>
-        <div class="small"></div>
+        <div class="big">
+            <img src="./img/3.jpg" alt="作品1">
+        </div>
+        
+        <div class="small" style="top:0px;left:645px;">
+            <img src="./img/4.jpg" alt="作品1">
+        </div>
+        <div class="small" style="top:297px;left:645px;">
+            <img src="./img/5.jpg" alt="作品1">
+        </div>
       </div>
 
     </section>
