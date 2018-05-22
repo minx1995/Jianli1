@@ -10,20 +10,48 @@
          fill: currentColor;
          overflow: hidden;
       }
+   
+    .site-welcome{
+    display:none;
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;height: 100%;
+    z-index: 1;
+    background: #888;
+    justify-content: center;
+    align-items: center;
+    }
+  .site-welcome.active{
+    display: flex;
+  }
   </style>
   </head>
   <body>
-    <div class="topNavBar">
+    <div id="welcometo" class="site-welcome active">
+      <div class="loading"></div>
+    </div>
+    <div id="NavBar" class="topNavBar">
       <div class="topNavBar-inner clearfix" >
           <a class="logo" href="#" alt="logo" style="float: left; ">
               <span class="rs">RS</span><span class="card">card</span>
             </a>
-            <nav style="float: right;">
+            <nav style="float: right;" class="menu">
               <ul class="clearfix">
-                <li><a href="#">关于</a></li>
-                <li><a href="#">技能</a></li>
-                <li><a href="#">作品</a></li>
-                <li><a href="#">博客</a></li>
+                <li><a href="#siteAbout">关于</a></li>
+                <li><a href="#siteSkills">技能</a></li>
+                <li ><a  href="#siteWorks">作品</a>
+                <ul class="submenu">
+                  <li>作品1</li>
+                  <li>作品2</li>
+                  <li>作品3</li>
+                </ul></li>
+                <li><a  href="#">博客</a>
+                  <ul class="submenu">
+                    <li>博客1</li>
+                    <li>博客2</li>
+                    <li>博客3</li>
+                  </ul></li>
                 <li><a href="#">日历</a></li>
                 <li><a href="#">联系方式</a></li>
                 <li><a href="#">其他</a></li>
@@ -36,7 +64,7 @@
       <div class="mask"></div>
     </div>
     <main>
-      <div class="usercard">
+      <div  data-x  id="siteAbout" class="usercard">
         <div class="pictureAndText clearfix">
           <div class="picture">
             <img src="./img/2.jpg" alt="头像">
@@ -99,7 +127,7 @@
       </p>
 
     </main>
-    <section class="skill">
+    <section data-x id="siteSkills" class="skill">
       <h2>技能</h2>
       <ol class="clearfix">
         <li>
@@ -107,7 +135,8 @@
               HTML 5 &amp; CSS 3
           </h3>
           <div class="jindutiao">
-            <div class="jindu1"></div>
+            <div class="jindu" style="width:40%;
+  height: 100%;" ></div>
           </div>
          </li>
          <li>
@@ -115,40 +144,45 @@
                 Javascript
             </h3>
             <div class="jindutiao">
-              <div class="jindu2"></div>
+              <div class="jindu"  style="width:35%;
+  height: 100%;"></div>
             </div>
            </li> <li>
               <h3>
                   jQuery
               </h3>
               <div class="jindutiao">
-                <div class="jindu3"></div>
+                <div class="jindu"  style="width:50%;
+  height: 100%;" ></div>
               </div>
              </li> <li>
                 <h3>
                     vue.js
                 </h3>
                 <div class="jindutiao">
-                  <div class="jindu4"></div>
+                  <div class="jindu"  style="width:65%;
+  height: 100%;"></div>
                 </div>
                </li> <li>
                   <h3>
                       react.js
                   </h3>
                   <div class="jindutiao">
-                    <div class="jindu5"></div>
+                    <div class="jindu"  style="width:60%;
+  height: 100%;"></div>
                   </div>
                  </li> <li>
                     <h3>
                         Node.js
                     </h3>
                     <div class="jindutiao">
-                      <div class="jindu6"></div>
+                      <div class="jindu"  style="width:80%;
+  height: 100%;"></div>
                     </div>
                    </li>
       </ol>
     </section>
-    <section class="works">
+    <section data-x  id="siteWorks" class="works">
       <h2>作品集</h2>
       <nav>
         <ol class="clearfix">
@@ -177,15 +211,136 @@
         </div>
         
         <div class="small" style="top:0px;left:645px;">
-            <img src="./img/4.jpg" alt="作品1">
+            <img src="./img/4.jpg" alt="作品2">
         </div>
         <div class="small" style="top:297px;left:645px;">
-            <img src="./img/5.jpg" alt="作品1">
+            <img src="./img/5.jpg" alt="作品3">
         </div>
       </div>
 
     </section>
     <script src="https://at.alicdn.com/t/font_601823_732pyaaqwqctmx6r.js
     "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+<script>
+ setTimeout(function(){
+    welcometo.classList.remove('active')
+  },1000)
+              let specialTags = document.querySelectorAll('[data-x]')
+      for (i = 0;i < specialTags.length;i++){
+          specialTags[i].classList.add('offset')
+      }
+setTimeout(function(){
+  yyy()
+},777)
+       
+
+  window.onscroll = function(xxx){
+    if(window.scrollY > 0){
+      NavBar.classList.add('sticky')
+    }else{
+      NavBar.classList.remove('sticky')
+    }
+
+
+  yyy()
+
+  }
+     function yyy (){
+                     let specialTags = document.querySelectorAll('[data-x]')
+      let minindex = 0
+    for (i = 1;i < specialTags.length;i++){
+    if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minindex].offsetTop - window.scrollY)) 
+      {
+        minindex = i 
+      }
+    }
+  
+   /* for (let i = 0;i < specialTags.length;i++){
+      specialTags[i].classList.remove('active')
+    }
+      specialTags[minindex].classList.add('active')*/
+      specialTags[minindex].classList.remove('offset')
+    
+     let D = specialTags[minindex].id
+
+     let a  = document.querySelector('a[href = "#' + D + '"]')
+
+      let L = a.parentNode
+  let borther = L.parentNode.children
+      for(let i = 0;i < borther.length;i++){
+        borther[i].classList.remove('hilight')
+      }
+        L.classList.add('hilight')
+ }
+  let liTages = document.querySelectorAll('nav.menu > ul > li')
+  for(let i=0;i<liTages.length;i++){
+    liTages[i].onmouseenter = function(x){
+     x.currentTarget.classList.add('active')
+     /* let b = a.getElementsByTagName('ul')[0]
+      while (b.tagName !== 'UL'){
+        b = b.nextSibling
+      }
+      b.classList.add('active')*/
+    } 
+    liTages[i].onmouseleave = function(x){
+     x.currentTarget.classList.remove('active')
+    } 
+    /*let b = a.getElementsByTagName('ul')[0]
+      while (b.tagName !== 'UL'){
+        b = b.nextSibling
+      }
+      b.classList.remove('active')*/
+    }
+    let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+    for(let i=0;i < aTags.length;i++){
+      aTags[i].onclick = function(x){
+        x.preventDefault()
+        let a = x.currentTarget
+        let href = a.getAttribute('href')
+        let element = document.querySelector(href)
+        let top = element.offsetTop
+
+    //let n = 25
+   // let duration = 500 / n
+    let currentTop = window.scrollY
+    let TagTop = top -80
+    let s = TagTop - currentTop
+    let t = Math.abs(s / 100 *200)
+  function animate(time) {
+      requestAnimationFrame(animate);
+      TWEEN.update(time);
+  }
+  requestAnimationFrame(animate);
+if (t > 500) {
+  t = 500;
+}
+  var coords = { y: currentTop };
+  var tween = new TWEEN.Tween(coords) 
+          .to({ y:TagTop},t)
+          .easing(TWEEN.Easing.Quadratic.InOut) 
+          .onUpdate(function() { 
+              window.scrollTo(0,coords.y)
+          })
+          .start(); 
+    //let distance = (TagTop - currentTop) / n
+    /*let i = 0
+    let id = setInterval(() =>{
+      if (i === n){
+      window.clearInterval(id)
+      return
+      }
+      i = i + 1
+      window.scrollTo(0,currentTop + distance * i)
+
+    },duration)*/
+
+
+      }
+      
+    }
+
+  
+</script>
   </body>
 </html>

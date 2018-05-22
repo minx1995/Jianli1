@@ -8,12 +8,13 @@ ul,ol{
   list-style:none;
 }
 .topNavBar{
-  padding-top: 20px;
+  padding-top: 25px;
   padding-bottom: 12px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  color: #B7B7B7;
 }
 .topNavBar-inner{
   padding: 0 16px;
@@ -45,10 +46,11 @@ hr{
   float:left;
 margin-left: 17px;
 margin-right: 17px;
+position: relative;
 }
 .topNavBar  nav >ul >li > a{
   font-size: 12px;
-  color: #B7B7B7;
+  color: inherit;
   text-decoration: none;
   font-weight: bold;
   border-bottom:3px solid transparent;
@@ -56,10 +58,28 @@ margin-right: 17px;
   padding-top: 11px;
   padding-bottom: 5px;
   display: block;
+  position: relative;
 
 }
-.topNavBar  nav >ul >li > a:hover{
-border-bottom: 3px solid #e06567;
+.topNavBar  nav >ul >li.active > a::after,
+.topNavBar  nav >ul >li.hilight > a::after{
+content: '';
+display: block;;
+position:absolute;
+top: 100%;
+width: 100%;
+left: 0;
+background:#e6686a;
+height: 3px;
+animation: Slide 0.7s;
+}
+@keyframes Slide{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
 }
 .topNavBar .logo{
   font-size: 24px;
@@ -177,9 +197,7 @@ font-weight: bold;
 margin: 32px 0;
 transition: box-shadow 0.2s;
 }
-body>main .dw{
 
-}
 body>main .download:hover{
 box-shadow: 0px 4px 13px 0px rgba(0, 0, 0,0.2);
 }
@@ -225,37 +243,18 @@ section.skill .jindutiao{
  background: #FAE1E1;
  border-radius: 2px;
   margin: 4px 0 40px;
+  overflow: hidden;
+
 }
-section.skill .jindutiao .jindu1{
-  background-color:  #E6686A;
-  width:40%;
-  height: 100%;
+section.skill .jindutiao > .jindu{
+    background-color:  #E6686A;
+      transform: translateX(0);
+  transition: all 1s;
+  }
+section.skill.offset .jindu{
+ transform: translateX(-100%);
 }
-section.skill .jindutiao .jindu2{
-  background-color:  #E6686A;
-  width:35%;
-  height: 100%;
-}
-section.skill .jindutiao .jindu3{
-  background-color:  #E6686A;
-  width:50%;
-  height: 100%;
-}
-section.skill .jindutiao .jindu4{
-  background-color:  #E6686A;
-  width:65%;
-  height: 100%;
-}
-section.skill .jindutiao .jindu5{
-  background-color:  #E6686A;
-  width:60%;
-  height: 100%;
-}
-section.skill .jindutiao .jindu6{
-  background-color:  #E6686A;
-  width:80%;
-  height: 100%;
-}
+
 section.skill h3{
 
     font-size: 14px;
@@ -330,4 +329,76 @@ section.works .jobs{
 section.works .jobs >.big,
 section.works .jobs >.small{
   position: absolute;
+}
+.loading{
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.loading::before,.loading::after{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  background: black;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  animation: s 1.5s linear infinite;
+}
+.loading::after{
+  animation-delay: 0.75s;
+}
+@keyframes s{
+  0%{
+    width: 0px;height: 0px;opacity: 1;
+  }
+  100%{
+    width: 100px;height: 100px;opacity: 0;
+  }
+}
+.topNavBar.sticky{
+background: white;
+transition: all 0.5s;
+padding: 10px 0;
+box-shadow: 0 0 10px rgba(0, 0, 0, 25);
+color: #3d4451;
+z-index: 3;
+}
+.topNavBar .submenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background:white;
+  color: #3d4451;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 25);
+  cursor:pointer;
+}
+.topNavBar li.active> .submenu{
+  display: block;
+animation: submenuSlide 0.3s;
+}
+@keyframes submenuSlide{
+  0%{
+margin-right:  100%
+  }
+  100%{
+    margin-right:  0%
+  }
+}
+.topNavBar .submenu>li{
+white-space: nowrap;
+padding: 5px 10px;
+}
+
+[data-x].offset{
+    transform: translateY(200px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
 }
